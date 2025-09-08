@@ -17,7 +17,6 @@
         localStorage.setItem('theme', 'dark');
       }
     }
-    // On load, set theme from localStorage
     document.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark');
@@ -34,6 +33,7 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans dark:bg-gray-900 dark:text-white">
+
   <!-- Theme Toggle Button -->
   <div class="fixed top-4 right-4 z-50">
     <button onclick="toggleTheme()" class="px-4 py-2 bg-yellow-400 rounded-xl font-semibold shadow hover:bg-yellow-300 transition transform hover:scale-105">Toggle Theme</button>
@@ -55,7 +55,6 @@
     <h2 class="text-3xl font-bold mb-6">About Me</h2>
     <p class="text-lg">I am a QA Specialist with 3.5+ years of experience in Manual, API, and Automation testing. I ensure zero-defect delivery, faster releases, and improved user satisfaction.</p>
   </section>
-
   <!-- Services Section -->
   <section class="py-16 bg-gray-100 px-6 dark:bg-gray-800 fade-in">
     <h2 class="text-3xl font-bold text-center mb-12">Services</h2>
@@ -115,12 +114,59 @@
     </form>
   </section>
 
+  <!-- Cover Letter Section -->
+  <section class="py-16 px-6 text-center fade-in">
+    <h2 class="text-3xl font-bold mb-6">Cover Letter</h2>
+    <button 
+      id="coverLetterBtn"
+      onclick="toggleCoverLetter()" 
+      class="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold shadow hover:bg-blue-500 transition transform hover:scale-105 mx-auto">
+      <span id="coverLetterText">Show Cover Letter</span>
+      <svg id="coverLetterArrow" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+
+    <div id="coverLetter" 
+         class="mt-8 max-w-3xl mx-auto text-left bg-white dark:bg-gray-800 p-6 rounded-2xl shadow 
+                overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+      <h3 class="text-xl font-semibold mb-4">QA Testing Specialist</h3>
+      <p class="mb-4">Dear Client,</p>
+      <p class="mb-4">
+        I hope you are doing well. <br>
+        I am <strong>Uday Prakash Patel</strong>, a Manual & API Testing Specialist with 3.5+ years of QA experience in ensuring web, mobile, and desktop applications are bug-free, reliable, and user-friendly.
+      </p>
+      <ul class="list-disc list-inside mb-4">
+        <li>Manual Testing (Functional, Regression, UI/UX)</li>
+        <li>Bug Finding & Reporting with screenshots/videos (JIRA, Bugzilla, Trello)</li>
+        <li>API Testing using Postman & REST APIs</li>
+        <li>Test Case Creation, Execution, and Documentation</li>
+        <li>Cross-browser and compatibility testing</li>
+      </ul>
+      <p class="mb-4">
+        ✅ What I will deliver for your project: <br>
+        - A detailed test plan and execution strategy <br>
+        - Clear bug reports with steps to reproduce <br>
+        - Suggestions for improving user experience & performance <br>
+        - Timely communication and reliable support
+      </p>
+      <p class="mb-4">
+        I have worked with startups and enterprises, helping them launch bug-free products faster and increase user satisfaction. My goal is to provide you with high-quality QA services that save time, reduce risks, and ensure smooth delivery.
+      </p>
+      <p class="mb-4">I would be glad to discuss your project requirements and provide a tailored QA plan. Looking forward to collaborating with you.</p>
+      <p class="mb-2">Best regards,<br><strong>Uday Prakash Patel</strong></p>
+      <p>📧 Email: <a href="mailto:udayprakashpatel2@gmail.com" class="underline">udayprakashpatel2@gmail.com</a></p>
+      <p>🌐 LinkedIn: <a href="https://www.linkedin.com/in/udayprakashpatel" class="underline">linkedin.com/in/udayprakashpatel</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="py-6 bg-gray-900 text-center text-gray-400">
     <p>© 2025 Uday Prakash Patel. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // Reveal on scroll animation
+    // Scroll animation
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = { threshold: 0.2 };
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
@@ -132,6 +178,25 @@
       });
     }, appearOptions);
     faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Toggle Cover Letter
+    function toggleCoverLetter() {
+      const coverLetter = document.getElementById('coverLetter');
+      const buttonText = document.getElementById('coverLetterText');
+      const arrow = document.getElementById('coverLetterArrow');
+
+      if (coverLetter.classList.contains('max-h-0')) {
+        coverLetter.classList.remove('max-h-0', 'opacity-0');
+        coverLetter.classList.add('max-h-[2000px]', 'opacity-100');
+        buttonText.textContent = 'Hide Cover Letter';
+        arrow.classList.add('rotate-180');
+      } else {
+        coverLetter.classList.add('max-h-0', 'opacity-0');
+        coverLetter.classList.remove('max-h-[2000px]', 'opacity-100');
+        buttonText.textContent = 'Show Cover Letter';
+        arrow.classList.remove('rotate-180');
+      }
+    }
   </script>
 </body>
 </html>
