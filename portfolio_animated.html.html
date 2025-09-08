@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uday Prakash Patel - QA Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    // On load, set theme from localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    });
+  </script>
+  <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .dark body { background-color: #111827; color: #f9fafb; }
+    .dark section { background-color: #1f2937; color: #f9fafb; }
+    .dark .bg-white { background-color: #1f2937 !important; color: #f9fafb; }
+    .dark footer { background-color: #0f172a !important; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans dark:bg-gray-900 dark:text-white">
+  <!-- Theme Toggle Button -->
+  <div class="fixed top-4 right-4 z-50">
+    <button onclick="toggleTheme()" class="px-4 py-2 bg-yellow-400 rounded-xl font-semibold shadow hover:bg-yellow-300 transition transform hover:scale-105">Toggle Theme</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 text-center dark:from-gray-800 dark:to-gray-900 fade-in">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Uday Prakash Patel</h1>
+    <p class="text-xl mb-6">Manual & API Testing Specialist</p>
+    <p class="max-w-2xl mx-auto mb-6">Helping businesses deliver bug-free, high-quality software.</p>
+    <div class="space-x-4">
+      <a href="https://www.upwork.com" class="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold shadow hover:bg-gray-200 dark:bg-yellow-400 dark:text-gray-900 transition transform hover:scale-105">Hire Me on Upwork</a>
+      <a href="#work" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-xl font-semibold shadow hover:bg-yellow-300 transition transform hover:scale-105">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 px-6 text-center max-w-3xl mx-auto fade-in">
+    <h2 class="text-3xl font-bold mb-6">About Me</h2>
+    <p class="text-lg">I am a QA Specialist with 3.5+ years of experience in Manual, API, and Automation testing. I ensure zero-defect delivery, faster releases, and improved user satisfaction.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-gray-100 px-6 dark:bg-gray-800 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-12">Services</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold mb-2">Manual Testing</h3><p>Websites, Mobile & Desktop Applications.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold mb-2">Functional & Regression Testing</h3><p>Ensuring stable releases with zero defects.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold mb-2">API Testing</h3><p>Using Postman, Swagger & REST APIs.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold mb-2">Bug Reporting</h3><p>Detailed reports with screenshots/videos.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold mb-2">Test Case Creation</h3><p>Writing & executing detailed test cases.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold mb-2">Cross-Browser Testing</h3><p>Compatibility testing across browsers.</p></div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="work" class="py-16 px-6 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold">QA Engineer – Coalizao.ae, Dubai (2024 – Present)</h3><p>Performed end-to-end testing of web apps & APIs. Implemented automation with Selenium, Cypress, Playwright. Delivered bug reports with 100% client satisfaction.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold">QA Analyst – GlobalLogic Pvt. Ltd., Hyderabad (2022 – 2023)</h3><p>Conducted manual & regression testing for enterprise apps. Designed test cases, executed test cycles & reported defects. Collaborated with developers for faster bug resolution.</p></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="text-xl font-semibold">Python Developer (Testing Role) – V3M Pvt. Ltd., Gurugram (2023 – 2024)</h3><p>Built REST APIs & performed functional testing. Automated workflows & integrated API test cases.</p></div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-16 bg-gray-100 px-6 dark:bg-gray-800 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+    <div class="max-w-4xl mx-auto grid sm:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow transition transform hover:scale-105"><h3 class="font-semibold mb-2">Testing Tools</h3><p>Postman, Selenium, Cypress, Playwright, JIRA, Bugzilla</p></div>
+      <div class="bg-white p-6 rounded-2xl shadow transition transform hover:scale-105"><h3 class="font-semibold mb-2">Languages</h3><p>Python, JavaScript (basic for automation)</p></div>
+      <div class="bg-white p-6 rounded-2xl shadow transition transform hover:scale-105"><h3 class="font-semibold mb-2">Databases</h3><p>MySQL, SQL Server</p></div>
+      <div class="bg-white p-6 rounded-2xl shadow transition transform hover:scale-105"><h3 class="font-semibold mb-2">Platforms</h3><p>Windows, Linux, Web & Mobile</p></div>
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section class="py-16 px-6 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-12">Education & Certifications</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="font-semibold">M.C.A – R.D.V.V Jabalpur (2019–2021)</h3></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="font-semibold">B.Sc. (Computer Science) – R.D.V.V Jabalpur (2016–2019)</h3></div>
+      <div class="bg-white shadow rounded-2xl p-6 transition transform hover:scale-105"><h3 class="font-semibold">Certifications</h3><ul class="list-disc list-inside"><li>HackerRank Python Certification</li><li>API Testing (Postman)</li></ul></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 bg-blue-700 text-white px-6 text-center dark:bg-gray-900 fade-in">
+    <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+    <p class="mb-4">Email: <a href="mailto:udayprakashpatel2@gmail.com" class="underline">udayprakashpatel2@gmail.com</a></p>
+    <p class="mb-4">Phone: +91 6260586572</p>
+    <p class="mb-4">LinkedIn: <a href="https://www.linkedin.com/in/udayprakashpatel" class="underline">linkedin.com/in/udayprakashpatel</a></p>
+    <p class="mb-4">GitHub: <a href="https://github.com/UdayPrakashPatel" class="underline">github.com/UdayPrakashPatel</a></p>
+    <form class="max-w-xl mx-auto mt-8 space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 rounded-xl text-gray-800">
+      <input type="email" placeholder="Your Email" class="w-full p-3 rounded-xl text-gray-800">
+      <textarea placeholder="Your Message" class="w-full p-3 rounded-xl text-gray-800"></textarea>
+      <button type="submit" class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-xl font-semibold shadow hover:bg-yellow-300 transition transform hover:scale-105">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="py-6 bg-gray-900 text-center text-gray-400">
+    <p>© 2025 Uday Prakash Patel. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Reveal on scroll animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
